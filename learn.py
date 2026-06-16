@@ -1,11 +1,8 @@
-class Student:
-    def __init__(self, name, age):
-     self.name = name
-     self.age = age 
+from fastapi import FastAPI
 
-     def introduce (self):
-        print("my name ", self.name)
-        print("my age", self.age)
+app = FastAPI()
 
-s1 = Student("vansh", 21)
-s1.introduce()
+@app.get ("/") 
+def home ():
+    return {"message" : "Hello World!" }
+
